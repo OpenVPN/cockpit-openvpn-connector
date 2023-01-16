@@ -1,0 +1,714 @@
+/* 1 - Structure */
+.btnContainer {
+  box-sizing: border-box;
+  max-width: 1096px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -178px;
+  padding: 24px;
+  padding-right: 0;
+}
+
+.btnContainer .btn {
+  margin-left: 16px;
+}
+
+#disconnect_area .btnContainer {
+  box-sizing: border-box;
+  max-width: 1096px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -144px;
+  margin-bottom: 103px;
+  padding: 24px;
+  padding-right: 0;
+}
+
+#session_area .btnContainer {
+  margin-right: 32px;
+}
+
+.col-12 {
+  flex-basis: 100%;
+}
+
+.col-6 {
+  flex-basis: 50%;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 32px;
+}
+
+#token_area .content {
+  margin: 0;
+}
+
+.container {
+  margin: 32px;
+}
+
+.checkboxContainer {
+  display: block;
+}
+
+.divider {
+  background: #E5E8F1;
+  height: 1px;
+  max-width: 1096px;
+  margin: -19px auto 24px;
+  width: 100%;
+}
+
+.list ul {
+  margin: 20px 0 20px;
+  padding: 0;
+}
+
+.logo {
+  display: block;
+  margin-bottom: 16px;
+  margin-top: -27px;
+  max-width: 295px;
+}
+
+.headContainer {
+  box-sizing: border-box;
+  max-width: 1096px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px;
+  width: 100%;
+}
+
+.cardContainer {
+  border: 1px solid #E5E8F1;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+  box-sizing: border-box;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+  width: 100%;
+}
+
+#disconnect_area .content {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#session_area .cardContainer {
+  margin-top: 66px;
+}
+
+.cardHeader {
+  margin-bottom: 36px;
+}
+
+.cardHeader .subtitle {
+  margin-top: 0;
+}
+
+.statRow {
+  align-items: center;
+  border-bottom: 1px solid #DADEEA;
+  box-sizing: border-box;
+  color: #282D3C;
+  display: block;
+  flex-direction: row;
+  font-family: intermedium, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  padding: 26px 8px 25px 8px;
+}
+
+.statTable {
+  margin-top: 45px;
+}
+
+#stats_output div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.statValue {
+  color: #3B91F1;
+  font-family: interregular, sans-serif;
+  font-weight: 400;
+  float: right;
+  padding-left: 50%;
+  text-transform: none;
+}
+
+.connected {
+  color: #11A76E;
+}
+
+.disconnected {
+  color: #BB1139;
+}
+
+/* 2 - Typography */
+a {
+  text-decoration: underline;
+}
+
+body {
+  color: #475376;
+  font-family: interregular, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight:700;
+  letter-spacing:normal;
+  line-height:120%;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.title {
+  color: #475376;
+  font-family: intersemi_bold, sans-serif;
+  font-size:32px;
+  text-align:left;
+}
+
+.subtitle {
+  color: #475376;
+  float: left;
+  font-family: intersemi_bold, sans-serif;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 20px;
+  text-align:left;
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.versionInfo {
+  color: #7785AC;
+  font-size: 12px;
+  line-height: 120%;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align:left;
+}
+
+.versionInfo pre {
+  font-family: interregular, sans-serif;
+}
+
+.notes {
+  color: #1B1D23;
+  font-family: interregular, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 4px;
+}
+
+.notes a {
+  color: #2B3D6B;
+}
+
+.dco-alert {
+  align-items: flex-start;
+  background: #F6E3B9;
+  border: 1px solid #E3A025;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: none;
+  flex-direction: row;
+  gap: 16px;
+  margin: 8px 0 16px 0;
+  padding: 16px;
+}
+
+.dco-alert span {
+  align-items: center;
+  color: #E3A025;
+  display: inline-flex;
+  float: left;
+  min-height: 100%;
+}
+
+/* 3 - Buttons */
+.btn {
+  align-items: center;
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+  display: block;
+  float: right;
+  font-family: intersemi_bold, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  height: 36px;
+  justify-content: center;
+  padding: 8px 16px;
+}
+
+.btn:focus, .btn:hover {
+  box-shadow: 0 0 0 4px rgba(59, 145, 241, 0.45);
+}
+
+.btn:focus-visible {
+  outline: none !important;
+}
+
+.btn-primary, .btn-primary:focus {
+  background: #3F67D1;
+}
+
+.btn-primary:hover {
+  background: #4D79DC;
+}
+
+.btn-primary:active {
+  background: #2342BA;
+}
+
+.btn-ghost, .btn-ghost:focus {
+  background: #FFFFFF;
+  border: 1px solid #3F67D1;
+  color: #3F67D1;
+}
+
+.btn-ghost:hover {
+  background: #DCE0EB;
+}
+
+.btn-ghost:active {
+  background: #E5E8F1;
+}
+
+.btn-warning, .btn-warning:focus {
+  background: #BB1139;
+}
+
+.btn-warning:hover {
+  background: #CA1646;
+}
+
+.btn-warning:active {
+  background: #9D071E;
+}
+
+.btn-success, .btn-success:focus {
+  background: #11A76E;
+}
+
+.btn-success:hover {
+  background: #14B87F;
+}
+
+.btn-success:active {
+  background: #0D734B;
+}
+
+.btn svg {
+  margin-bottom: -3px;
+  margin-right: 8px;
+}
+
+/* 4 - Input */
+.list-alt {
+  color: #475376;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: -16px;
+  text-align: justify;
+}
+
+.tokenArea {
+  background-color: #F9FAFB;
+  margin: 16px 0;
+  max-width: 1096px;
+  padding: 24px 16px 24px 16px;
+  width: 100%;
+}
+
+.tokenArea .subtitle {
+  float: none;
+}
+
+.tokenArea .btn {
+  float: right;
+  margin-top: 2px;
+}
+
+.tokenArea .icon-tabler-eye {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  background: #FFFFFF;
+  color: #7785AC;
+  cursor: pointer;
+  margin: 23px 0 0 -45px;
+  padding-left: 8px;
+  visibility: visible;
+}
+
+.tokenArea .icon-tabler-eye-off {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background: #FFFFFF;
+  color: #7785AC;
+  cursor: pointer;
+  margin: 23px 0 0 -37px;
+  padding-left: 8px;
+  visibility: hidden;
+}
+
+.checkboxContainer {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.checkboxLabel {
+  display: flex;
+  margin-bottom: 16px;
+  font-family: intermedium, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  grid-template-columns: 1em auto;
+  gap: 8px;
+  line-height: 20px;
+  color: #475376;
+}
+
+.checkboxLabel + .checkboxLabel {
+  margin-top: 1em;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background: #F9FAFB;
+  border: 1px solid #3F67D1;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+  display: grid;
+  font: inherit;
+  height: 20px;
+  place-content: center;
+  transform: translateY(-0.075em);
+  vertical-align: middle;
+  width: 20px;
+}
+
+input[type="checkbox"]::before {
+  background: #3F67D1;
+  border-radius: 4px;
+  content: "✓";
+  color: #FFF;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 20px;
+  text-align: center;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  vertical-align: middle;
+  width: 20px;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]::before:focus{
+  border: 1px solid #2342BA;
+  background: #2342BA;
+}
+
+input[type="checkbox"]:disabled {
+  background: #DADEEA;
+  border: 1px solid #BEC7DE;
+  color: #BEC7DE;
+}
+
+input[type="checkbox"]:focus{
+  background: #E5E8F1;
+  border: 1px solid #2342BA;
+  box-shadow: 0 1px 2px rgba(59, 145, 241, 0.05), 0 0 0 4px rgba(59, 145, 241, 0.4);
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: none !important;
+}
+
+input[type="checkbox"]:hover:enabled{
+  background: #E5E8F1;
+}
+
+.tooltip {
+  margin-left: -4px;
+  margin-top: 2px;
+  margin-bottom: -7px;
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  background-color: #1B1D23;
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 16px;
+  text-align: center;
+  visibility: hidden;
+  width: 350px;
+
+  /* Position the tooltip text */
+  bottom: 125%;
+  left: 0%;
+  margin-left: -122px;
+  position: absolute;
+  z-index: 1;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1B1D23 transparent transparent transparent;
+  left: 35%;
+  margin-left: -5px;
+  position: absolute;
+  top: 100%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tokenField {
+  border: 1px solid #BEC7DE;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  box-sizing: border-box;
+  float: left;
+  height: 40px;
+  margin: 16px 0 16px 0;
+  padding: 8px 16px;
+  width: 100%;
+}
+
+.tokenField::placeholder {
+  color: #7785AC;
+}
+
+.tokenField:hover {
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.1), 0 1px 2px rgba(16, 24, 40, 0.06);
+}
+
+.tokenField:focus {
+  border: 1px solid #1A3967;
+  box-shadow: 0 1px 2px rgba(59, 145, 241, 0.05), 0 0 0 4px rgba(59, 145, 241, 0.4);
+}
+
+.tokenField:focus-visible {
+  outline: none !important;
+}
+
+.tokenLabel {
+  color: #475376;
+  display: block;
+  margin-bottom: -7px;
+  font-family: intermedium, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* 4.1 - Toasts */
+#toast {
+  border-radius: 8px 0 0 8px;
+  bottom: 32px;
+  color: #fff;
+  min-width: 250px;
+  margin-left: -125px;
+  padding: 16px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.toast-success {
+  background-color: #11A76E;
+}
+
+.toast-warning {
+  background-color: #BB1139;
+}
+
+.toast-information {
+  background-color: #3B91F1;
+}
+
+/* Show the toast when connecting/disconnecting (class added with JavaScript) */
+#toast.show {
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  visibility: visible;
+}
+
+/* Animations to fade the toast in and out */
+@-webkit-keyframes fadein {
+  from {
+      bottom: 0;
+      opacity: 0;
+ }
+  to {
+      bottom: 30px;
+      opacity: 1;
+ }
+}
+
+@keyframes fadein {
+  from {
+      bottom: 0;
+      opacity: 0;
+ }
+  to {
+      bottom: 30px;
+      opacity: 1;
+ }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+      bottom: 30px;
+      opacity: 1;
+ }
+  to {
+      bottom: 0;
+      opacity: 0;
+ }
+}
+
+@keyframes fadeout {
+  from {
+      bottom: 30px;
+      opacity: 1;
+ }
+  to {
+      bottom: 0;
+      opacity: 0;
+ }
+}
+
+/* Spinner */
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 40px 0;
+}
+
+.spinner {
+  animation: spin 2s linear infinite;
+  border: 6px solid #E5E8F1;
+  border-top: 6px solid #475376;
+  border-radius: 50%;
+  height: 58px;
+  width: 58px;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+ }
+
+  100% {
+      transform: rotate(360deg);
+ }
+}
+
+/* 5 - Media Queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #disconnect_area .btnContainer {
+    margin-right: 32px;
+  }
+
+  .content {
+    margin: 32px;
+  }
+  .statTable {
+      margin-top: 90px;
+ }
+
+  .statValue {
+      padding-left: 10%;
+ }
+}
+/* Small & Medium devices (landscape tablets, 768px and below) */
+@media only screen and (max-width: 768px) {
+  [class*="col-"] {
+    flex-basis: 100%;
+  }
+
+  .btnContainer {
+    margin-top: -90px;
+    margin-bottom: 0;
+    padding-right: 31px;
+  }
+
+  #session_area .btnContainer {
+    margin-right: 0;
+  }
+
+  .cardContainer {
+    margin-top: 0 !important;
+  }
+
+  #disconnect_area .btnContainer {
+    margin: -46px 32px 32px 0;
+  }
+
+  #disconnect_area .content {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+ /* For larger screens, adjust padding/margins of certain elements*/
+  .btnContainer {
+    padding-right: 0;
+  }
+  #session_area .btnContainer {
+    margin-right: 280px;
+  }
+}

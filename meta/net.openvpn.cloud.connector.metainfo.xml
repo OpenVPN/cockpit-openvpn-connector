@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>net.openvpn.cloud.connector</id>
+  <metadata_license>FSFAP</metadata_license>
+  <project_license>AGPL-3</project_license>
+  <name>OpenVPN Cloud Connector</name>
+  <summary>
+    A simple OpenVPN Cloud Connector configuration tool
+  </summary>
+  <description>
+    <p>
+      This provides a simple interface to configure and manage
+      the OpenVPN Cloud Connector configuration and related VPN
+      session.
+    </p>
+  </description>
+  <keywords>
+    <keyword>OpenVPN</keyword>
+    <keyword>Cloud</keyword>
+    <keyword>Connector</keyword>
+    <keyword>VPN</keyword>
+  </keywords>
+  <url type="homepage">https://openvpn.net/cloud-vpn/</url>
+  <url type="help">https://openvpn.net/cloud-docs/</url>
+  <extends>cockpit.desktop</extends>
+  <launchable type="cockpit-manifest">openvpn-connector/connector</launchable>
+</component>

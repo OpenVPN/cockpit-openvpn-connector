@@ -1,0 +1,40 @@
+{
+    "name": "openvpn-connector",
+    "requires": {
+        "cockpit": "195"
+    },
+    "version": 1,
+
+    "menu": {
+        "index": {
+            "label": "OpenVPN Connector",
+            "order": 49,
+            "path": "connector.html",
+            "docs": [
+                {
+                    "label": "OpenVPN Cloud documentation",
+                    "url": "https://openvpn.net/cloud-docs/"
+                },
+                {
+                    "label": "OpenVPN Connector documentation",
+                    "url": "https://openvpn.net/cloud-docs/connector-cockpit-user-guide/"
+                },
+                {
+                    "label": "Cloud: Configure Network",
+                    "url": "https://openvpn.net/cloud-docs/create-network-using-wizard/"
+                },
+                {
+                    "label": "Cloud: Configure Host",
+                    "url": "https://openvpn.net/cloud-docs/adding-a-host/"
+                }
+            ],
+            "keywords": [
+                {
+                    "matches": ["openvpn", "cloud", "connector", "vpn", "network"],
+                    "translate": false
+                }
+            ]
+        }
+    },
+    "content-security-policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval'"
+}

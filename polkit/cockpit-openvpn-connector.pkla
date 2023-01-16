@@ -1,0 +1,6 @@
+[OpenVPN Cloud Connector permissions]
+Identity=unix-group:connector
+Action=org.freedesktop.systemd1.manage-unit-files
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
