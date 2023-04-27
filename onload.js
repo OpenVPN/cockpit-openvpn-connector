@@ -11,7 +11,7 @@ var config_path = undefined;  // store the config path that is used by multiple 
 var versioninfo = undefined;  // store the version so that command is not made on every refresh
 var connector_group = false;  // the logged in user is member of the 'connector' group
 
-const default_cloud_cfgname = "OpenVPNCloud";
+const default_cloud_cfgname = "CloudConnexa";
 
 // D-Bus connection to the session manager; used in most calls
 // and keeps the connection for signals sent by the session
@@ -199,7 +199,7 @@ function check_config_present() {
     cfgmgr.wait(() => {
         try
         {
-            // Lookup the config path for a config named "OpenVPNCloud",
+            // Lookup the config path for a config named "CloudConnexa",
             // which is the config name openvpn-connector-setup uses by default
             //
             // FIXME: Should be able to handle more configs - or at least identify
@@ -268,7 +268,7 @@ function set_openvpn3_version() {
 function check_session_inprogress() {
     try
     {
-        // Fetch the VPN session started with the "OpenVPNCloud" config
+        // Fetch the VPN session started with the "CloudConnexa" config
         let inv = sesmgr_srv.call("/net/openvpn/v3/sessions", "net.openvpn.v3.sessions",
                                   "LookupConfigName", [default_cloud_cfgname])
             .then((args) => {
@@ -562,7 +562,7 @@ function post_cloud_token_install(data, enable_boot) {
       }
       catch (ex)
       {
-          error_modal("Failed enabling the OpenVPN Cloud connection at boot<br/><br/>post_cloud_token_install: ", ex);
+          error_modal("Failed enabling the CloudConnexa connection at boot<br/><br/>post_cloud_token_install: ", ex);
       }
       check_config_present()
       check_session_inprogress();
@@ -573,7 +573,7 @@ function post_cloud_token_install(data, enable_boot) {
 
 function systemctl_enable(enable)
 {
-    // Enable/Disable the OpenVPNCloud VPN profileto start during boot.
+    // Enable/Disable the CloudConnexa VPN profile to start during boot.
     let cloud_srv = "openvpn3-session@" + default_cloud_cfgname + ".service";
     const systemd = cockpit.dbus("org.freedesktop.systemd1", { superuser: "try" });
     let inv = undefined;
@@ -583,7 +583,7 @@ function systemctl_enable(enable)
                            "org.freedesktop.systemd1.Manager",
                            "EnableUnitFiles", [[cloud_srv], false, true])
             .catch((err) => {
-                error_modal("Failed to start OpenVPN Cloud connection during boot: ", err);
+                error_modal("Failed to start CloudConnexa connection during boot: ", err);
             });
     }
     else
@@ -592,7 +592,7 @@ function systemctl_enable(enable)
                            "org.freedesktop.systemd1.Manager",
                            "DisableUnitFiles", [[cloud_srv], false])
             .catch((err) => {
-                error_modal("Failed to start OpenVPN Cloud connection during boot: ", err);
+                error_modal("Failed to disable CloudConnexa connection start during boot: ", err);
             });
     }
     return inv;
@@ -606,7 +606,7 @@ function start_reconnect() {
         try
         {
             // Restart the identified VPN session
-            showToast("Reconnecting to OpenVPN Cloud ", "toast-success");
+            showToast("Reconnecting to CloudConnexa ", "toast-success");
             document.body.style.cursor = 'wait'; // changes cursor to spinning
             sesmgr_srv.call(session_path, "net.openvpn.v3.sessions",
                             "Restart")
@@ -875,7 +875,7 @@ function session_status_chg_handler(path, intf, signame, args)
             sleep(300).then(() => { update_connection_stats() });
             if (status.minor == 7)
             {
-                showToast("Connection to OpenVPN Cloud Successful", "toast-success");
+                showToast("Connection to CloudConnexa Successful", "toast-success");
                 document.body.style.cursor = 'default'; // changes cursor back
                 closeAllModals();
             }
@@ -908,7 +908,7 @@ function session_created(sesspath, owner)
                                                                     path: session_path,
                                                                     member: "StatusChange"},
                                                                    session_status_chg_handler);
-                        showToast("Connection to OpenVPN Cloud Successful", "toast-success");
+                        showToast("Connection to CloudConnexa Successful", "toast-success");
                         document.body.style.cursor = 'default'; // changes cursor back
                         closeAllModals();
                         display_page();

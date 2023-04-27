@@ -8,7 +8,7 @@ and the [Cockpit Project](https://cockpit-project.org/).
 This project contains an add-on/package to the Cockpit web based administration
 tool to easily configure the host as an
 [OpenVPN Connector](https://openvpn.net/cloud-docs/connector-cockpit-user-guide/)
-for [OpenVPN Cloud](https://openvpn.net/cloud-vpn/).
+for [CloudConnexa™](https://openvpn.net/cloud-vpn/).
 
 Installation
 ------------

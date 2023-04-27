@@ -3,18 +3,19 @@
   <id>net.openvpn.cloud.connector</id>
   <metadata_license>FSFAP</metadata_license>
   <project_license>AGPL-3</project_license>
-  <name>OpenVPN Cloud Connector</name>
+  <name>CloudConnexa™ OpenVPN Connector</name>
   <summary>
-    A simple OpenVPN Cloud Connector configuration tool
+    A simple CloudConnexa Connector configuration tool
   </summary>
   <description>
     <p>
       This provides a simple interface to configure and manage
-      the OpenVPN Cloud Connector configuration and related VPN
-      session.
+      the CloudConnexa™ OpenVPN Connector configuration and
+      related VPN session.
     </p>
   </description>
   <keywords>
+    <keyword>CloudConnexa</keyword>
     <keyword>OpenVPN</keyword>
     <keyword>Cloud</keyword>
     <keyword>Connector</keyword>
