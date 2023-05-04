@@ -12,6 +12,7 @@ var versioninfo = undefined;  // store the version so that command is not made o
 var connector_group = false;  // the logged in user is member of the 'connector' group
 
 const default_cloud_cfgname = "CloudConnexa";
+const valid_cloud_cfgnames = [ default_cloud_cfgname, "OpenVPNCloud" ]
 
 // D-Bus connection to the session manager; used in most calls
 // and keeps the connection for signals sent by the session
@@ -204,24 +205,30 @@ function check_config_present() {
             //
             // FIXME: Should be able to handle more configs - or at least identify
             //        Cloud configs, regardless of name
-            //
-            let inv = cfgmgr.call("/net/openvpn/v3/configuration", "net.openvpn.v3.configuration",
-                       "LookupConfigName", [default_cloud_cfgname])
-                .then((args) => {
-                    if (0 == args.length || 0 == args[0].length)
-                    {
-                        config_path = undefined;
-                    }
-                    else
-                    {
-                        config_path = args[0][0]
-                        //console.debug("check_config_present() path: " + config_path);
-                        display_page();
-                    }
-                })
-            .catch((err) => {
-                error_modal("check_config_present (proxy): ", err);
-            });
+            let inv = undefined;
+            for (const cfgname of valid_cloud_cfgnames)
+            {
+                inv = cfgmgr.call("/net/openvpn/v3/configuration", "net.openvpn.v3.configuration",
+                                      "LookupConfigName", [cfgname])
+                    .then((args) => {
+                        if (!config_path)
+                        {
+                            if (0 == args.length || 0 == args[0].length)
+                            {
+                                config_path = undefined;
+                            }
+                            else
+                            {
+                                config_path = args[0][0]
+                                //console.debug("check_config_present() path: " + config_path);
+                                display_page();
+                            }
+                        }
+                    })
+                    .catch((err) => {
+                        error_modal("check_config_present (proxy): ", err);
+                    });
+            }
             return inv;
         }
         catch (ex)
@@ -269,24 +276,31 @@ function check_session_inprogress() {
     try
     {
         // Fetch the VPN session started with the "CloudConnexa" config
-        let inv = sesmgr_srv.call("/net/openvpn/v3/sessions", "net.openvpn.v3.sessions",
-                                  "LookupConfigName", [default_cloud_cfgname])
-            .then((args) => {
-                // FIXME: This does not account for more sessions started with the same
-                //        configuration name.  It will take the first one.
-                if (0 == args.length || 0 == args[0].length)
-                {
-                    session_path = undefined;
-                }
-                else
-                {
-                    session_path = args[0][0]
-                    //console.debug("check_session_inprogress() path: " + session_path);
-                }
-            })
-            .catch((err) => {
-                error_modal("check_session_inprogress (proxy): ", err);
-            });
+        let inv = undefined;
+        for (const cfgname of valid_cloud_cfgnames)
+        {
+            inv = sesmgr_srv.call("/net/openvpn/v3/sessions", "net.openvpn.v3.sessions",
+                                      "LookupConfigName", [cfgname])
+                .then((args) => {
+                    if (!session_path)
+                    {
+                        // FIXME: This does not account for more sessions started with the same
+                        //        configuration name.  It will take the first one.
+                        if (0 == args.length || 0 == args[0].length)
+                        {
+                            session_path = undefined;
+                        }
+                        else
+                        {
+                            session_path = args[0][0];
+                            //console.debug("check_session_inprogress() path: " + session_path);
+                        }
+                    }
+                })
+                .catch((err) => {
+                    error_modal("check_session_inprogress (proxy): ", err);
+                });
+        }
         return inv;
     }
     catch (ex)
